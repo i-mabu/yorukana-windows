@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <!-- Linux 上で Windows 向けにクロスビルドするために必要 -->
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <AssemblyName>YoruKana</AssemblyName>
+    <RootNamespace>YoruKanaWin</RootNamespace>
+    <Version>1.1.1</Version>
+    <AssemblyVersion>1.1.1.0</AssemblyVersion>
+    <FileVersion>1.1.1.0</FileVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <!-- 単一ファイル exe を圧縮して配布サイズを小さくする (AEGIS C#版と同じ設定) -->
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <!-- ネイティブライブラリも exe 内に含め、真の単体 exe にする -->
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+  </PropertyGroup>
+
+</Project>
