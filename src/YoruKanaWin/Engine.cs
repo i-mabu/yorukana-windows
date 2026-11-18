@@ -1,9 +1,9 @@
 namespace YoruKanaWin;
 
-// ===== よるかな 変換エンジン (GUI非依存 / Android版 Java からの忠実移植) =====
-// 移植元: yorukana-ime の RomajiConverter.java / KanaUtils.java / Dictionary.java /
-// ConversionEngine.java / LearningStore.java / MemoryLearningStore.java。
-// 仕様・候補順・活用生成は Java 版と同一。クラス名のみ C# の慣例に合わせた
+// ===== よるかな 変換エンジン (GUI非依存 / Android版 Kotlin からの忠実移植) =====
+// 移植元: yorukana-ime の RomajiConverter.kt / KanaUtils.kt / Dictionary.kt /
+// ConversionEngine.kt / LearningStore.kt / MemoryLearningStore.kt。
+// 仕様・候補順・活用生成は Kotlin 版と同一。クラス名のみ C# の慣例に合わせた
 // (Dictionary -> JapaneseDictionary、LearningStore -> ILearningStore)。
 
 // ----- ローマ字→ひらがな変換 -----
@@ -235,11 +235,6 @@ public static class KanaUtils
         "わをんー〜", // わ行
     };
 
-    public static readonly string[] ToggleKeyLabels =
-    {
-        "あ", "か", "さ", "た", "な", "は", "ま", "や", "ら", "わ",
-    };
-
     // 文字が属する行のインデックス (属さなければ -1)
     public static int RowIndexOf(char c)
     {
@@ -382,7 +377,6 @@ public sealed class JapaneseDictionary
         Add(rs + row[0] + "ます", ks + row[0] + "ます");        // ます形
         Add(rs + row[0] + "ました", ks + row[0] + "ました");    // ました
         Add(rs + row[0] + "たい", ks + row[0] + "たい");        // たい
-        Add(rs + row[0] + "た", ks + row[0] + "た");            // 連用 (た の前段)
         string taR, teR, taK, teK;
         if (reading == "いく") { // 行く は例外 (いった/いって)
             taR = "いった"; teR = "いって"; taK = "行った"; teK = "行って";

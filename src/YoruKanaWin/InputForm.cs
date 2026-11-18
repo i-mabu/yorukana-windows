@@ -406,10 +406,20 @@ public sealed class InputForm : Form
     }
 
     // 変換中なら選択候補、そうでなければ読みのひらがなを確定形として返す
+    // 候補で確定した場合は、Enter 確定・候補クリックと同様に学習へ記録する
     private string SegmentAsFixed()
     {
         if (_romaji.Length == 0) return "";
-        if (_selected >= 0 && _selected < _candidates.Count) return _candidates[_selected].Text;
+        if (_selected >= 0 && _selected < _candidates.Count)
+        {
+            CandidateItem item = _candidates[_selected];
+            // ひらがな原文・ローマ字原文以外の確定を学習する
+            if (item.Text != item.Reading && item.Text != _romaji)
+            {
+                _learning.RecordSelection(item.Reading, item.Text);
+            }
+            return item.Text;
+        }
         return CurrentReading();
     }
 }

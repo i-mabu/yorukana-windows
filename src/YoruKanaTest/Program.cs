@@ -3,7 +3,7 @@ using YoruKanaWin;
 
 // ===== YoruKanaTest (コンソール方式の単体テスト・外部依存なし) =====
 // Android版 tests/TestMain.java のチェック項目を C# に移植したもの。
-// 追加で「辞書読み数が Android版と一致して 3,502 であること」と
+// 追加で「辞書読み数が Android版と一致して 3,408 であること」と
 // 「学習の JSON 永続化 (LearningFileStore) の往復」を検証する。
 
 int passed = 0;
@@ -136,7 +136,7 @@ try
     // ---------- Dictionary / ConversionEngine ----------
     var dict = new JapaneseDictionary();
     Check(dict.Size() >= 600, $"dictionary size >= 600 (actual={dict.Size()})");
-    Check(dict.Size() == 3502, $"dictionary size == 3502 same as Android (actual={dict.Size()})");
+    Check(dict.Size() == 3408, $"dictionary size == 3408 same as Android (actual={dict.Size()})");
     Check(dict.Lookup("がっこう").Contains("学校"), "dict gakkou -> 学校");
     Check(dict.Lookup("せんせい").Contains("先生"), "dict sensei -> 先生");
     Check(dict.Lookup("かいた").Contains("書いた"), "dict godan ta-form kaita");

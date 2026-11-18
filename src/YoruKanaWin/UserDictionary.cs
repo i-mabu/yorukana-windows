@@ -4,9 +4,9 @@ using System.Text.Json;
 namespace YoruKanaWin;
 
 // ===== ユーザー辞書 (純ロジック / GUI非依存) =====
-// Android版 (Java) UserDictionary の移植。よみ → 単語 の登録を保持する。
+// Android版 UserDictionary.kt の移植。よみ → 単語 の登録を保持する。
 // 変換候補では内蔵辞書・学習より優先される (ConversionEngine 参照)。
-// 登録順を保持する (Java の LinkedHashMap 相当)。
+// 登録順を保持する (Kotlin の LinkedHashMap 相当)。
 public sealed class UserDictionary
 {
     private readonly Dictionary<string, List<string>> _map = new();

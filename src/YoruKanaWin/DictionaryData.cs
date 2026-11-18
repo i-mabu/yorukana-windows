@@ -1,7 +1,7 @@
 namespace YoruKanaWin;
 
-// ===== 内蔵辞書データ (Android版 DictionaryData.java から機械変換) =====
-// 生成元: yorukana-ime/app/src/main/java/jp/yorukana/ime/DictionaryData.java
+// ===== 内蔵辞書データ (Android版 DictionaryData.kt から機械変換) =====
+// 生成元: yorukana-ime/app/src/main/java/jp/yorukana/ime/DictionaryData.kt
 // 生成方法: tools/convert_dict.py で文字列配列を抽出して C# 形式に変換した。
 // ENTRIES: "読み=候補1,候補2,..." / GODAN・ICHIDAN・I_ADJ・NA_ADJ: "読み|漢字形"
 // SINGLE_KANJI: 1文字読みに対する単漢字フォールバック。
@@ -9,6 +9,7 @@ internal static class DictionaryData
 {
     internal static readonly string[] ENTRIES =
     {
+        // 挨拶・日常表現
         "おはよう=お早う,おはよう",
         "こんにちは=こんにちは,今日は",
         "こんばんは=こんばんは,今晩は",
@@ -48,6 +49,7 @@ internal static class DictionaryData
         "こわい=怖い",
         "つかれた=疲れた",
         "つかれ=疲れ",
+        // 時間・日付
         "きょう=今日",
         "あした=明日",
         "あす=明日",
@@ -121,7 +123,6 @@ internal static class DictionaryData
         "おととし=一昨年",
         "さらいねん=再来年",
         "まいつき=毎月",
-        "まいにち=毎日",
         "ごぜん=午前",
         "ごご=午後",
         "まよなか=真夜中",
@@ -147,6 +148,7 @@ internal static class DictionaryData
         "さいご=最後",
         "はじめ=初め,始め",
         "おわり=終わり",
+        // 天気・自然
         "てんき=天気",
         "はれ=晴れ",
         "くもり=曇り",
@@ -209,6 +211,7 @@ internal static class DictionaryData
         "おと=音",
         "こえ=声",
         "うた=歌,唄",
+        // 学校
         "がっこう=学校",
         "せんせい=先生",
         "がくせい=学生",
@@ -296,6 +299,7 @@ internal static class DictionaryData
         "せきゅりてぃ=セキュリティ",
         "くらうど=クラウド",
         "あぷり=アプリ",
+        // 家族・人
         "かぞく=家族",
         "ちち=父",
         "はは=母",
@@ -356,7 +360,6 @@ internal static class DictionaryData
         "おい=甥",
         "めい=姪",
         "かれし=彼氏",
-        "ともだち=友達",
         "しんゆう=親友",
         "なかま=仲間",
         "てき=敵",
@@ -373,6 +376,7 @@ internal static class DictionaryData
         "のうか=農家",
         "ぎょし=漁師",
         "はいたつ=配達",
+        // 食べ物
         "ごはん=ご飯",
         "あさごはん=朝ご飯",
         "ひるごはん=昼ご飯",
@@ -480,6 +484,7 @@ internal static class DictionaryData
         "ちーず=チーズ",
         "ばたー=バター",
         "よーぐると=ヨーグルト",
+        // 体・健康
         "からだ=体",
         "あたま=頭",
         "かお=顔",
@@ -535,6 +540,7 @@ internal static class DictionaryData
         "てあらい=手洗い",
         "うがい=うがい",
         "しょうどく=消毒",
+        // 場所・物
         "いえ=家",
         "うち=家,内",
         "へや=部屋",
@@ -683,6 +689,7 @@ internal static class DictionaryData
         "しんじゅく=新宿",
         "しぶや=渋谷",
         "あきはばら=秋葉原",
+        // 数字・数詞
         "いち=一",
         "に=二",
         "さん=三",
@@ -726,7 +733,6 @@ internal static class DictionaryData
         "ばんごう=番号",
         "ねんだい=年代",
         "ねん=年",
-        "つき=月",
         "にち=日",
         "しゅう=週",
         "じ=時",
@@ -743,6 +749,7 @@ internal static class DictionaryData
         "みり=ミリ",
         "ぐらむ=グラム",
         "りっとる=リットル",
+        // 指示・方向・位置
         "わたし=私",
         "ぼく=僕",
         "あなた=あなた,貴方",
@@ -775,7 +782,6 @@ internal static class DictionaryData
         "みなみ=南",
         "きた=北",
         "まんなか=真ん中",
-        "あいだ=間",
         "むこう=向こう",
         "てまえ=手前",
         "おく=奥",
@@ -792,6 +798,7 @@ internal static class DictionaryData
         "はんぶん=半分",
         "だいたい=大体",
         "ほとんど=殆ど,ほとんど",
+        // 副詞・接続・その他
         "とても=とても",
         "すこし=少し",
         "たくさん=沢山,たくさん",
@@ -895,7 +902,6 @@ internal static class DictionaryData
         "げんいん=原因",
         "えいきょう=影響",
         "かんけい=関係",
-        "しゃかい=社会",
         "せいじ=政治",
         "けいざい=経済",
         "ぶんか=文化",
@@ -909,10 +915,8 @@ internal static class DictionaryData
         "はってん=発展",
         "しんぽ=進歩",
         "せいちょう=成長",
-        "れんしゅう=練習",
         "けいけん=経験",
         "ちしき=知識",
-        "じょうほう=情報",
         "いけん=意見",
         "かんがえ=考え",
         "きもち=気持ち",
@@ -950,6 +954,7 @@ internal static class DictionaryData
         "ぶっか=物価",
         "えんあん=円安",
         "えんだか=円高",
+        // 不規則動詞・特殊
         "する=する",
         "します=します",
         "しました=しました",
@@ -1017,9 +1022,9 @@ internal static class DictionaryData
         "うかがう=伺う",
         "はいけん=拝見",
         "ぞんじる=存じる",
+        // その他の常用名詞
         "もの=物,者",
         "こと=事,こと",
-        "とき=時",
         "ところ=所,ところ",
         "ほう=方",
         "ため=為,ため",
@@ -1046,8 +1051,6 @@ internal static class DictionaryData
         "むら=村",
         "けん=県,件,券",
         "しゅと=首都",
-        "ちゅうしん=中心",
-        "きた=北",
         "かいがい=海外",
         "こくさい=国際",
         "がいこく=外国",
@@ -1091,8 +1094,6 @@ internal static class DictionaryData
         "ほーむ=ホーム",
         "せんろ=線路",
         "しゃりょう=車両",
-        "うんてん=運転",
-        "うんてんしゅ=運転手",
         "じこ=事故",
         "じゅうたい=渋滞",
         "ちえん=遅延",
@@ -1101,7 +1102,6 @@ internal static class DictionaryData
         "きゅうこう=急行",
         "とっきゅう=特急",
         "かいそく=快速",
-        "ふつう=普通",
         "しんかんせん=新幹線",
         "ちかてつ=地下鉄",
         "もにれーる=モノレール",
@@ -1196,7 +1196,6 @@ internal static class DictionaryData
         "ふせぐ|防ぐ",
         "つなぐ|繋ぐ",
         "あるく|歩く",
-        "あそぶ|遊ぶ",
         "いたむ|痛む",
         "うらむ|恨む",
         "かむ|噛む",
@@ -1310,7 +1309,6 @@ internal static class DictionaryData
         "ゆれる|揺れる",
         "よごれる|汚れる",
         "われる|割れる",
-        "わすれる|忘れる",
         "おぼれる|溺れる",
         "くずれる|崩れる",
     };
@@ -1377,7 +1375,6 @@ internal static class DictionaryData
         "かたい|硬い",
         "やわらかい|柔らかい",
         "するどい|鋭い",
-        "まるい|丸い",
         "しかくい|四角い",
         "ほしい|欲しい",
         "うらやましい|羨ましい",
@@ -1434,7 +1431,6 @@ internal static class DictionaryData
         "ゆうこう|友好",
         "てきたい|敵対",
         "へいわ|平和",
-        "あんてい|安定",
         "きんちょう|緊張",
         "りらっくす|リラックス",
         "すとれす|ストレス",
