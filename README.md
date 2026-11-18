@@ -44,15 +44,15 @@ yorukana は「自動で変換しない・自動で判定しない」手動型�
 
 ### キー操作
 
-| キー | 動作 |
-| --- | --- |
+| キー                 | 動作                                       |
+| -------------------- | ------------------------------------------ |
 | 文字キー (a-z, -, ') | ローマ字入力（英数モードではそのまま入力） |
-| Space | 変換開始／次の候補へ（英数モードでは空白） |
-| Enter | 確定して元のアプリへ送信 |
-| Esc | キャンセル（送信しない） |
-| Backspace | 変換中は変換を解除、それ以外は1文字削除 |
-| Alt+A | あ（日本語）/ A（英数）モード切替 |
-| 候補クリック | その候補で確定し、入力を継続 |
+| Space                | 変換開始／次の候補へ（英数モードでは空白） |
+| Enter                | 確定して元のアプリへ送信                   |
+| Esc                  | キャンセル（送信しない）                   |
+| Backspace            | 変換中は変換を解除、それ以外は1文字削除    |
+| Alt+A                | あ（日本語）/ A（英数）モード切替          |
+| 候補クリック         | その候補で確定し、入力を継続               |
 
 ## ビルド方法
 
@@ -99,18 +99,18 @@ python3 tools/convert_dict.py   # yorukana-ime の DictionaryData.java を読み
 
 ## 構成
 
-| パス | 内容 |
-| --- | --- |
-| `src/YoruKanaWin/Engine.cs` | 変換エンジン（GUI非依存。Android版 RomajiConverter / KanaUtils / Dictionary / ConversionEngine / LearningStore の移植） |
-| `src/YoruKanaWin/DictionaryData.cs` | 辞書データ（`tools/convert_dict.py` で Java 版から機械変換） |
-| `src/YoruKanaWin/LearningFileStore.cs` | 学習の JSON 永続化（%AppData%\YoruKana\learning.json、読み込み時に不正データを正規化） |
-| `src/YoruKanaWin/UserDictionary.cs` | ユーザー辞書（純ロジック＋JSON 永続化 %AppData%\YoruKana\userdict.json） |
-| `src/YoruKanaWin/UserDictForm.cs` | ユーザー辞書の編集フォーム（追加・一覧・削除） |
-| `src/YoruKanaWin/InputForm.cs` | 入力ウィンドウ（composing 表示・候補バー・キー処理） |
-| `src/YoruKanaWin/TextSender.cs` | テキスト送信（前面復帰→クリップボード貼り付け／SendInput フォールバック） |
-| `src/YoruKanaWin/NativeMethods.cs` | Win32 P/Invoke（RegisterHotKey / SetForegroundWindow / SendInput） |
-| `src/YoruKanaWin/Program.cs` | エントリポイント、トレイ常駐、ホットキー受信、二重起動防止 |
-| `src/YoruKanaTest/` | エンジン層の単体テスト（Android版 TestMain.java の移植＋永続化テスト） |
+| パス                                   | 内容                                                                                                                    |
+| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `src/YoruKanaWin/Engine.cs`            | 変換エンジン（GUI非依存。Android版 RomajiConverter / KanaUtils / Dictionary / ConversionEngine / LearningStore の移植） |
+| `src/YoruKanaWin/DictionaryData.cs`    | 辞書データ（`tools/convert_dict.py` で Java 版から機械変換）                                                            |
+| `src/YoruKanaWin/LearningFileStore.cs` | 学習の JSON 永続化（%AppData%\YoruKana\learning.json、読み込み時に不正データを正規化）                                  |
+| `src/YoruKanaWin/UserDictionary.cs`    | ユーザー辞書（純ロジック＋JSON 永続化 %AppData%\YoruKana\userdict.json）                                                |
+| `src/YoruKanaWin/UserDictForm.cs`      | ユーザー辞書の編集フォーム（追加・一覧・削除）                                                                          |
+| `src/YoruKanaWin/InputForm.cs`         | 入力ウィンドウ（composing 表示・候補バー・キー処理）                                                                    |
+| `src/YoruKanaWin/TextSender.cs`        | テキスト送信（前面復帰→クリップボード貼り付け／SendInput フォールバック）                                               |
+| `src/YoruKanaWin/NativeMethods.cs`     | Win32 P/Invoke（RegisterHotKey / SetForegroundWindow / SendInput）                                                      |
+| `src/YoruKanaWin/Program.cs`           | エントリポイント、トレイ常駐、ホットキー受信、二重起動防止                                                              |
+| `src/YoruKanaTest/`                    | エンジン層の単体テスト（Android版 TestMain.java の移植＋永続化テスト）                                                  |
 
 ## 制限事項（正直なところ）
 
@@ -128,12 +128,14 @@ python3 tools/convert_dict.py   # yorukana-ime の DictionaryData.java を読み
 ## バージョン履歴
 
 ### 1.1.1
+
 - **辞書データ修正**（Android版 v1.2.1 の修正を反映）: 「減る」を一段動詞から五段動詞に正しく分類し直し、正しい活用形（減った/減らない/減れる/減ろう等）が候補に出るようになった（従来は 減ない/減た 等の誤った形が生成されていた）
 - 「気持ちいい」は「良い」の不規則活用（気持ちよくない/気持ちよかった等）を明示エントリで登録し、規則生成による非語（気持ちいくない等）が出なくなった
 - 上記により辞書の読み数が 3,501 → 3,502 になり、Android版と再び完全一致
 - テスト 133件 → 143件（減る・気持ちいい の回帰テストを追加）
 
 ### 1.1.0
+
 - **ユーザー辞書を追加**（Android版 v1.1 から移植）: トレイメニューから編集でき、変換候補の最優先に表示。`%AppData%\YoruKana\userdict.json` に永続化
 - SendInput フォールバックの修正: INPUT 構造体に MOUSEINPUT を含め x64 の正しいサイズ（40バイト）にし、送信件数を検証するようになった（従来は構造体サイズ不足で失敗し得た）
 - 送信先の検証を強化: 対象ウィンドウの生存・前面化を確認できない場合は送信を中止し、理由を通知（文章はクリップボードに残す）
@@ -147,4 +149,5 @@ python3 tools/convert_dict.py   # yorukana-ime の DictionaryData.java を読み
 - テスト 105件 → 133件
 
 ### 1.0.0
+
 - 初版（ローマ字変換・学習・トレイ常駐・ホットキー送信）
