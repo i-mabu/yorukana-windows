@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+      - name: ビルド (YoruKanaWin)
+        run: dotnet build src/YoruKanaWin/YoruKanaWin.csproj -c Release
+      # YoruKanaTest はテスト SDK ではなくコンソール実行型のテストランナー。
+      # build.bat と同じ手順で dotnet run で実行する (終了コードで合否が決まる)。
+      - name: テスト実行 (YoruKanaTest)
+        run: dotnet run --project src/YoruKanaTest/YoruKanaTest.csproj -c Release
