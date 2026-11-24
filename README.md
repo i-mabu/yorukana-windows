@@ -1,5 +1,7 @@
 # 🌙 よるかな for Windows
 
+> 📦 **このリポジトリは [i-mabu/yorukana-ime](https://github.com/i-mabu/yorukana-ime) に統合されました。** 今後の開発は yorukana-ime の `windows-companion/` フォルダで行います。このリポジトリはアーカイブされます。
+
 Android 用オリジナル日本語IME「よるかな IME」の Windows 版です。C# / .NET 8 (WinForms) で実装しました。
 変換エンジンと辞書は Android 版から忠実に移植しており、辞書の読み数は Android 版と完全に一致します（3,408 読み）。
 
